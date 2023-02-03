@@ -2,16 +2,15 @@ let scelta = prompt("Premi 1 per le email, 2 per i dadi");
 if(scelta == 1){
     //email
     let arreyEmail = ["pietro@gmail.com", "prova@gmail.com", "test@gmail.com"];
-
     //inserire email
     personalEmail = prompt("Inserisci la tua email");
     arreyEmail.push(personalEmail)
     console.log('array'+arreyEmail);
-    //cercare l'email
+    //inserire l'email da cercare
     researchEmail = prompt("Quale email cerchi?");
     let risultato = arreyEmail.includes(researchEmail);
     console.log(risultato); 
-
+    //condizione per verificare presenza email
     let printEmail = document.querySelector('body');
     if(risultato==true){
         printEmail.innerHTML = ('<h1>Email: '+researchEmail+' è presente</h1>');
