@@ -1,22 +1,19 @@
 let scelta = prompt("Premi 1 per le email, 2 per i dadi");
 if(scelta == 1){
     //email
-    let numeroEmail=0;
-    let arreyEmail = [];
-    //quante email inserire
+    let arreyEmail = ["pietro@gmail.com", "prova@gmail.com", "test@gmail.com"];
 
-    numeroEmail = prompt("Quante email devi inserire?");
-    console.log(numeroEmail);
-    //ciclo per enserire le email
-    for(let i=0 ; i< numeroEmail ; i++){
-        //chiedere l'email
-        const emailInput = prompt("Inserisci email");
-        arreyEmail.push(emailInput);
-        console.log('email inserita: '+arreyEmail[i]);
-        //stampare l'email
-        const printEmail = document.querySelector('body')
-        printEmail.innerHTML += ('<h1>Email: '+arreyEmail[i]+'</h1>');
+    //inserire email
+    personalEmail = prompt("Inserisci la tua email");
+    arreyEmail.push(personalEmail);
+    //ciclo per cercare l'email
+    researchEmail = prompt("Quale email cerchi?");
+    for(let i=0 ; i< arreyEmail.length ; i++){
+        if(arreyEmail[i]===researchEmail){
+            alert("PRESENTE IN MEMORIA");
+        }
     }
+    console.log('array'+arreyEmail);
 
 }else if(scelta == 2){
     //dati
@@ -38,3 +35,8 @@ if(scelta == 1){
     }
     console.log('fine')
 }
+
+/*
+const printEmail = document.querySelector('body')
+printEmail.innerHTML += ('<h1>Email: '+arreyEmail[i]+'</h1>');
+*/
