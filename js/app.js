@@ -5,16 +5,19 @@ if(scelta == 1){
 
     //inserire email
     personalEmail = prompt("Inserisci la tua email");
-    arreyEmail.push(personalEmail);
-    //ciclo per cercare l'email
-    researchEmail = prompt("Quale email cerchi?");
-    for(let i=0 ; i< arreyEmail.length ; i++){
-        if(arreyEmail[i]===researchEmail){
-            alert("PRESENTE IN MEMORIA");
-        }
-    }
+    arreyEmail.push(personalEmail)
     console.log('array'+arreyEmail);
+    //cercare l'email
+    researchEmail = prompt("Quale email cerchi?");
+    let risultato = arreyEmail.includes(researchEmail);
+    console.log(risultato); 
 
+    let printEmail = document.querySelector('body');
+    if(risultato==true){
+        printEmail.innerHTML = ('<h1>Email: '+researchEmail+' è presente</h1>');
+    }else{
+        printEmail.innerHTML = ('<h1>Email: '+researchEmail+' non è presente</h1>');
+    }
 }else if(scelta == 2){
     //dati
     for(let i=0 ; i<=1 ; i++){
@@ -35,8 +38,3 @@ if(scelta == 1){
     }
     console.log('fine')
 }
-
-/*
-const printEmail = document.querySelector('body')
-printEmail.innerHTML += ('<h1>Email: '+arreyEmail[i]+'</h1>');
-*/
